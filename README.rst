@@ -10,8 +10,9 @@ http://hiroba.dqx.jp/sc/ のキャラページからステータス情報を取�
 
 Requirements
 ======================================================================
-HTMLのParsingにBeutifulSoup4を使用．ソースを修正すれば3でも動くはず．
- http://www.crummy.com/software/BeautifulSoup/
+HTMLのParsingにBeautifulSoup4を使用．ソースを修正すれば3でも動くはず．
+
+http://www.crummy.com/software/BeautifulSoup/
 
 
 Example
