@@ -42,9 +42,8 @@ class User(object):
         self.skills = {}
         self.skilleffects = {}
         self.spells = []
-        
 
-    def retrieve_and_update(self):
+    def retrieve_and_update_basic(self):
         profile_res = urllib.urlopen(self.url_profile)
 
         # リダイレクト (=非公開)
@@ -52,7 +51,10 @@ class User(object):
             raise RetrieveError(u'redirected from %s to %s' % (self.url_profile, profile_res.geturl()))
 
         self.update_profile(profile_res.read())
+        
 
+    def retrieve_and_update(self):
+        self.retrieve_and_update_basic()
 
         # 詳細
         profile_detail_res = urllib.urlopen(self.url_profile_detail)
