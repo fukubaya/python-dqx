@@ -136,7 +136,7 @@ class User(object):
         # いる場所
         soup_where = soup('div', {'class': 'where'})[0]
         location_dict = getDicFromDL(soup_where('dl')[0])
-        self.location = Location(server=location_dict[u'サーバー'], field=location_dict[u'フィールド'])
+        self.location = Location(server=location_dict[u'サーバー'], field=location_dict[u'エリア'])
         
         
     def update_profile_detail(self, html):
@@ -249,7 +249,7 @@ class Location(object):
         self.field = field
 
     def __unicode__(self):
-        return u'サーバー:%s, フィールド:%s' % (self.server, self.field)
+        return u'サーバー:%s, エリア:%s' % (self.server, self.field)
 
     def __str__(self):
         return self.__unicode__().encode('utf-8')
